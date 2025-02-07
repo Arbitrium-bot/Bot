@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitrium Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">
+            <h1>Arbitrium Bot</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#transactions">Transações</a></li>
+                <li><a href="#settings">Configurações</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="dashboard">
+        <div class="card">
+            <h3>Total ROI</h3>
+            <p id="total-roi">Carregando...</p>
+        </div>
+        <div class="card">
+            <h3>Total de Operações</h3>
+            <p id="total-usd-operations">Carregando...</p>
+        </div>
+        <div class="card">
+            <canvas id="roi-chart"></canvas>
+        </div>
+    </section>
+
+    <!-- Tabela de Oportunidades -->
+    <section id="opportunities" class="opportunities">
+        <h2>Oportunidades de Arbitragem</h2>
+        <table id="arbitrage-table">
+            <thead>
+                <tr>
+                    <th>Par</th>
+                    <th>Compra (Exchange)</th>
+                    <th>Preço de Compra</th>
+                    <th>Venda (Exchange)</th>
+                    <th>Preço de Venda</th>
+                    <th>ROI (%)</th>
+                    <th>Spread (%)</th>
+                    <th>Valor da Operação ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados serão carregados aqui -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Histórico de Transações -->
+    <section id="transactions" class="transactions">
+        <h2>Histórico de Transações</h2>
+        <table id="history-table">
+            <thead>
+                <tr>
+                    <th>Data/Hora</th>
+                    <th>Par</th>
+                    <th>Compra (Exchange)</th>
+                    <th>Preço de Compra</th>
+                    <th>Venda (Exchange)</th>
+                    <th>Preço de Venda</th>
+                    <th>ROI (%)</th>
+                    <th>Valor da Operação ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados serão carregados aqui -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
